@@ -12,28 +12,35 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .container {
 	width: 1200px;
 	height: 100vh;
 	background-color: green;
+	position: relative;
 }
 
 p#joke, button#get-joke {
-	color: red;
+	color: black;
 }
 
 p#joke {
-
+	width: 100%;
+	font-size: 40px;
+	text-align: center;
+	padding: 40px;
+	margin: 0;
 }
 
 button#get-joke {
 	border-style: none;
-	background-color: yellow;
-	border: 1px solid red;	
+	background-color: yellow;	
 	cursor: pointer;
 	padding: 20px;
 	font-size: 25px;
+	position: absolute;
+	bottom: 10%;
 }
 
