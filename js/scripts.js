@@ -5,7 +5,6 @@ var url = 'http://api.icndb.com/jokes/random',
 		getJoke();
 	});
 
-
 function getJoke() {
 	$.ajax({
 		method: 'GET',
