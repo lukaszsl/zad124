@@ -1,20 +1,20 @@
+$(function() {
 var url = 'http://api.icndb.com/jokes/random',
-	paragraph = document.getElementById('joke'),
-	button = document.getElementById('get-joke');
+	$paragraph = $('#joke'),
+	$button = $('#get-joke').click(function() {
+		getJoke();
+	});
 
-button.addEventListener('click', function() {
-	getJoke();
-});
 
 function getJoke() {
-	var xhr = new XMLHttpRequest();
-
-	xhr.open('GET', url);
-	xhr.addEventListener('load', function() {
-		var response = JSON.parse(xhr.response);
-		paragraph.innerHTML = response.value.joke;
+	$.ajax({
+		method: 'GET',
+		url: url,
+		success: function(res){
+			$paragraph.text(res.value.joke);
+		}
 	});
-	xhr.send();
 }
 
-button.click();
+$button.click();
+});
